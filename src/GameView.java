@@ -1,30 +1,57 @@
 import java.util.*;
+import java.sql.SQLException;
 
+/**
+* GameView.java
+* 
+* Purpose: 
+* 
+* @author fmeade
+* @author jbrooks12
+* @version April 2015
+*/
 public class GameView {
 	
 	Scanner scan;
+
+	ExpDB expdb;
 
 	Explorer explorer;
 
 	public GameView() {
 		scan = new Scanner(System.in);
 
-		explorer = new Explorer();
+		expdb = new ExpDB();
 	}
 	public void run() {
 		System.out.print("Welcome to the Explorer's Game! \n\n");
-		System.out.print("Please enter your name: ");
-			explorer.setName(scan.nextLine());
-		System.out.println("\n");
 		System.out.print("Please enter a username: ");
-			explorer.setUsername(scan.next());
+			String username = scan.next();
 		System.out.println("\n\n");
 
-		System.out.println("Hello " + explorer.getName());
-		System.out.println("Welcome to the Explorer's Game. Where you are tasked with" + "\n"
-							 + "collecting treasure and making it to the final room. The" + "\n"
-							 + "explorer with the highest value of treasures wins the game." + "\n"
-							 + "The game ends when all explorers make it to the final room.");
+		explorer = expdb.getExplorer(username);
 
+		if(explorer != null) {
+			ExpGame game = new ExpGame(explorer, expdb);
+			game.play();
+		}
+		else {
+			System.out.println("ERROR: No Explorer found for " + username + "\n");
+			System.out.print("Would you like to add one? y/n  ");
+				char ans = scan.nextChar();
+
+			if(ans == 'y' || ans == 'Y') {
+				// add an Explorer then start game
+			}
+			else if(ans == 'n' || ans == 'N') {
+				System.out.println("Thank you for stopping in.");
+			}
+			else {
+				System.out.println("ERROR: Please restart application.");
+			}
+		}
+
+		expDB.close();
 	}
+
 }

@@ -1,3 +1,12 @@
+/**
+* Explorer.java
+* 
+* Purpose: 
+* 
+* @author fmeade
+* @author jbrooks12
+* @version April 2015
+*/
 public class Explorer {
 	
 	private String name;
