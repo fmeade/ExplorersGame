@@ -21,7 +21,7 @@ public class GameView {
 	public GameView() {
 		scan = new Scanner(System.in);
 
-		expdb = new ExpDB();
+		expdb = new ExpDB("fmeade", "Catbags123");
 	}
 	public void run() {
 		System.out.print("Welcome to the Explorer's Game! \n\n");
@@ -38,7 +38,7 @@ public class GameView {
 		else {
 			System.out.println("ERROR: No Explorer found for " + username + "\n");
 			System.out.print("Would you like to add one? y/n  ");
-				char ans = scan.nextChar();
+				char ans = scan.next().charAt(0);
 
 			if(ans == 'y' || ans == 'Y') {
 				// add an Explorer then start game
@@ -51,7 +51,7 @@ public class GameView {
 			}
 		}
 
-		expDB.close();
+		expdb.close();
 	}
 
 }

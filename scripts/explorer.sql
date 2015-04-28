@@ -63,38 +63,73 @@ CREATE TABLE Explorer_Treasure
 -- Load explorer 
 
 INSERT INTO Explorer (EID, Name, Username, Room_Num, Max_Item_Count, Max_Bag_Weight, Max_Item_Weight)
-VALUES (eid_seq.nextval, 'Zeek', 'jpittges', 1, 2, 6, 6.5);
+VALUES (eid_seq.nextval, 'Forrest', 'fmeade', 1, 2, 6, 6.5);
+INSERT INTO Explorer (EID, Name, Username, Room_Num, Max_Item_Count, Max_Bag_Weight, Max_Item_Weight)
+VALUES (eid_seq.nextval, 'Joel', 'jbrook12', 1, 2, 6, 6.5);
 
 -- Load rooms 
 
 INSERT INTO Room (rid, Name, Descr, Next)
-VALUES (1, 'the Start Room', 'A cold, dark place', 2);
+VALUES (1, 'Kokiri Forest', 'A calm place for growing', 2);
 
 INSERT INTO Room (rid, Name, Descr, Next) 
-VALUES (2, 'Davis 216', 'A place of higher learning', 3);
+VALUES (2, 'Lost Woods', 'A place of darkness and confusion', 3);
 
 INSERT INTO Room (rid, Name, Descr, Next) 
-VALUES (3, 'Davis 225', 'A lab like no other', 4);
+VALUES (3, 'Deku Tree', 'A wise man once said..', 4);
+
+INSERT INTO Room (rid, Name, Descr, Next) 
+VALUES (4, 'Lon Lon Ranch', 'Come on, Lets Ride', 5);
+
+INSERT INTO Room (rid, Name, Descr, Next) 
+VALUES (5, 'Lake Hylia', 'Wanna go for a swim?', 6);
+
+INSERT INTO Room (rid, Name, Descr, Next) 
+VALUES (6, 'Hyrule Castle', 'Be careful at night, and when playing the Ocarina of Time', 7);
+
+INSERT INTO Room (rid, Name, Descr, Next) 
+VALUES (7, 'Zoras Domain', 'Good luck on the way down', 8);
+
+INSERT INTO Room (rid, Name, Descr, Next) 
+VALUES (8, 'Goron City', 'Watch out for the falling rocks', 9);
 
 INSERT INTO Room (rid, Name, Descr, Next)
-VALUES (4, 'the End Room', 'A warm, bright place', -1);
+VALUES (9, 'Temple', 'Now play the Ocarina for the world to hear', -1);
 
 -- Load treasures 
 
 INSERT INTO Treasure (tid, Name, Descr, Value, Weight)
-VALUES (1000, 'Golden key', 'Unlocks the first room', 1, 0.1); 
+VALUES (1000, 'Kokiri Sword', 'Well this is a dinky little sword', 15, 7); 
 
 INSERT INTO Treasure (tid, Name, Descr, Value, Weight)
-VALUES (1001, 'iPod', 'Plays music', 100, 0.5); 
+VALUES (1001, 'Deku Shield', 'This is almost as bad as theat wooden sword', 20, 10); 
 
 INSERT INTO Treasure (tid, Name, Descr, Value, Weight)
-VALUES (1002, 'DVD Player', 'Plays videos', 150, 5.5); 
+VALUES (1004, 'Boomarang', 'Now we are getting somewhere with these weapons', 12, 6.5); 
 
 INSERT INTO Treasure (tid, Name, Descr, Value, Weight)
-VALUES (1003, 'iPad', 'Mini tablet PC', 300, 2.0); 
+VALUES (1002, 'Slingshot', 'Sweet distance, watch your eye!', 10, 5.5); 
 
 INSERT INTO Treasure (tid, Name, Descr, Value, Weight)
-VALUES (1004, 'Plasma TV', '70-inch flat panel television', 200, 50); 
+VALUES (1003, 'Ocarina of Time', 'There are only 10 songs you can play on this instrument', 90, 4); 
+
+INSERT INTO Treasure (tid, Name, Descr, Value, Weight)
+VALUES (1004, 'Green Tunic', 'Just your regular outfit', 50, 15); 
+
+INSERT INTO Treasure (tid, Name, Descr, Value, Weight)
+VALUES (1004, 'Blue Tunic', 'Not just an outfit, but a water suit', 75, 20); 
+
+INSERT INTO Treasure (tid, Name, Descr, Value, Weight)
+VALUES (1004, 'Red Tunic', 'Forget water suit, lets walk through fire', 75, 20); 
+
+INSERT INTO Treasure (tid, Name, Descr, Value, Weight)
+VALUES (1004, 'Epona', 'She may be heavy but will always come when you call her', 150, 50); 
+
+INSERT INTO Treasure (tid, Name, Descr, Value, Weight)
+VALUES (1004, 'Master Sword', 'Only the worthy may hold this beloved sword', 300, 25); 
+
+INSERT INTO Treasure (tid, Name, Descr, Value, Weight)
+VALUES (1004, 'Hylian Shield', 'This magical thing randomly deflects or destroys deku nuts', 250, 30); 
 
 -- Load treasures into rooms 
 
@@ -112,6 +147,8 @@ VALUES (3, 1003);
 
 INSERT INTO Room_Treasure (rid, tid)
 VALUES (4, 1004); 
+
+
 
 COMMIT; 
 

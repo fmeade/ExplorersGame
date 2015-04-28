@@ -9,15 +9,20 @@
 */
 public class Explorer {
 	
+	private int id;
 	private String name;
-	private String username;
 
 	public Explorer() {
 
 	}
-	public Explorer(String _name, String _username) {
+
+	public Explorer(int _id, String _name) {
+		id = _id;
 		name = _name;
-		username = _username;
+	}
+
+	public int getID() {
+		return id;
 	}
 
 	public String getName() {
@@ -27,11 +32,8 @@ public class Explorer {
 		name = _name;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String _username) {
-		username = _username;
+	public String toString() {
+		return "Explorer: " + name + "\n";
 	}
 
 

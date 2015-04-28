@@ -1,3 +1,6 @@
+import java.util.*;
+import java.io.*;
+
 /**
 * ExpGame.java
 * 
@@ -9,15 +12,48 @@
 */
 public class ExpGame {
 	
-	public ExpGame() {
+	ExpDB expdb;
+	Explorer explorer;
 
+	Scanner scan;
+
+
+	public ExpGame(Explorer _explorer, ExpDB _expdb) {
+		explorer = _explorer;
+		expdb = _expdb;
+
+		scan = new Scanner(System.in);
 	}
 
 	public void play() {
-		System.out.println("Hello " + explorer.getName());
-		System.out.println("Welcome to the Explorer's Game. Where you are tasked with" + "\n"
-							 + "collecting treasure and making it to the final room. The" + "\n"
-							 + "explorer with the highest value of treasures wins the game." + "\n"
-							 + "The game ends when all explorers make it to the final room.");
+		boolean done = false;
+
+		Messages msg = new Messages();
+
+
+		System.out.println("Welcome " + explorer.getName + ". ");
+		msg.welcome();
+
+		while(!done) {
+			msg.commandMenu();
+			String option = scan.next();
+			msg.space();
+
+			if(option.equals("0") || (option.toLowerCase()).equals("quit")) {
+				done = true;
+			}
+			else if(option.equals("1") || (option.toLowerCase()).equals("move")) {
+				msg.moveMenu();
+			}
+			else if(option.equals("2") || (option.toLowerCase()).equals("grab treasure")) {
+				msg.grabTreasureMenu();
+			}
+			else if(option.equals("3") || (option.toLowerCase()).equals("drop treasure")) {
+				msg.dropTreasureMenu();
+			}
+			else {
+				System.out.println("Invalid input\n");
+			}
+		}
 	}
 }
