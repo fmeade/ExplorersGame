@@ -29,7 +29,7 @@ public class ExpGame {
 		boolean done = false;
 
 
-		System.out.println("Welcome " + explorer.getName + ". ");
+		System.out.println("Welcome " + explorer.getName() + ". ");
 		System.out.println("Here you are tasked with collecting treasure and " + "\n"
 						 + "making it to the final room. The explorer with the " + "\n"
 						 + "highest value of treasures wins the game. The game " + "\n"
@@ -48,7 +48,7 @@ public class ExpGame {
 
 			String option = scan.next();
 			System.out.println("\n");
-			
+
 
 			if(option.equals("0") || (option.toLowerCase()).equals("quit")) {
 				done = true;
@@ -64,7 +64,7 @@ public class ExpGame {
 				System.out.println("\n");
 
 				if(option.equals("0")) {
-
+					// do nothing
 				}
 				else {
 					// process selected room
@@ -74,11 +74,27 @@ public class ExpGame {
 				//list of treasures in room
 
 				System.out.println("Select Treasure you would like to pick up (0 to cancel):");
+
+
+				if(option.equals("0")) {
+					// do nothing
+				}
+				else {
+					// process treasures in room
+				}
 			}
 			else if(option.equals("3") || (option.toLowerCase()).equals("drop treasure")) {
 				// list of treasures in bag
 
 				System.out.println("Select Treasure you would like to drop (0 to cancel):");
+
+
+				if(option.equals("0")) {
+					// do nothing
+				}
+				else {
+					// process treasures in bag
+				}
 			}
 			else {
 				System.out.println("Invalid input\n");

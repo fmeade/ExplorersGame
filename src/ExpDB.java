@@ -2,7 +2,7 @@ import java.sql.*;
 /**
 * ExpDB.java
 * 
-* Purpose: 
+* Purpose: Creates connection to database and makes query calls to database
 * 
 * @author fmeade
 * @author jbrooks12
@@ -10,8 +10,11 @@ import java.sql.*;
 */
 public class ExpDB {
 
-	Connection connection = null;
+	Connection connection;
 
+	/**
+	 * Establishes connection to database
+	 */
 	public ExpDB(String _username, String _password) {
 
 		try {
@@ -26,11 +29,11 @@ public class ExpDB {
 		}
 	}
 
-	/*
-	 * 
+	/**
+	 * Gets Explorer data from Explorers table in the database
 	 */ 
 	public Explorer getExplorer(String _username) {
-		Explorer explorer = null;
+		Explorer explorer;
 
 		String query = "SELECT * FROM Explorer "
 							+ "WHERE username = " + _username + "'";
@@ -55,8 +58,8 @@ public class ExpDB {
 	}
 	
 
-	/*
-	 *
+	/**
+	 * Gets the current room that the Explorer is in
 	 */
 	public int getCurrRoom(int _eID) {
 		
@@ -83,7 +86,7 @@ public class ExpDB {
 	}
 
 
-	/*
+	/**
 	 *
 	 */
 	public int getConnRooms() {
@@ -91,7 +94,7 @@ public class ExpDB {
 	}
 
 
-	/*
+	/**
 	 *
 	 */
 	public String getTreasureDesc() {
@@ -99,7 +102,7 @@ public class ExpDB {
 	}
 
 
-	/*
+	/**
 	 *
 	 */
 	public String getRoomDesc() {
@@ -107,7 +110,7 @@ public class ExpDB {
 	}
 
 
-	/*
+	/**
 	 *
 	 */
 	public String getExplorersTreasures() {
@@ -115,7 +118,7 @@ public class ExpDB {
 	}
 
 
-	/*
+	/**
 	 *
 	 */
 	public String getRoomTreasures() {
@@ -123,7 +126,7 @@ public class ExpDB {
 	}
 
 
-	/*
+	/**
 	 *
 	 */
 	public String makeTreasureList() {
@@ -131,7 +134,7 @@ public class ExpDB {
 	}
 
 
-	/*
+	/**
 	 *
 	 */
 	public int move() {
@@ -139,7 +142,7 @@ public class ExpDB {
 	}
 
 
-	/*
+	/**
 	 *
 	 */
 	public void pickup() {
@@ -147,7 +150,7 @@ public class ExpDB {
 	}
 
 
-	/*
+	/**
 	 *
 	 */
 	public void close() {
