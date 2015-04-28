@@ -33,7 +33,7 @@ public class Treasure {
 
 	public String toString() {
 		return name + " -- " + descr + "\n" 
-		+ "value: " + value + "\n" 
-		+ "weight: " + weight + "\n";
+		+ "  value: " + value + "\n" 
+		+ "  weight: " + weight;
 	}
 }

@@ -9,20 +9,25 @@
 */
 public class Room {
 	
+	private int rid;
 	private String name;
+	private String descr;
 
 	public Room() {
 
 	}
-	public Room(String _name) {
+	public Room(int _rid, String _name, String _descr) {
+		rid = _rid;
 		name = _name;
+		descr = _descr;
 	}
 
 	public String getName() {
 		return name;
 	}
-	public void setName(String _name) {
-		name = _name;
+
+	public String toString() {
+		return rid + ". " + name + "-- " + descr;
 	}
 
 }
