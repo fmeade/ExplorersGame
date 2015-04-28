@@ -63,9 +63,9 @@ CREATE TABLE Explorer_Treasure
 -- Load explorer 
 
 INSERT INTO Explorer (EID, Name, Username, Room_Num, Max_Item_Count, Max_Bag_Weight, Max_Item_Weight)
-VALUES (eid_seq.nextval, 'Forrest', 'fmeade', 1, 2, 6, 6.5);
+VALUES (eid_seq.nextval, 'Forrest', 'fmeade', 1, 2, 130, 50.5);
 INSERT INTO Explorer (EID, Name, Username, Room_Num, Max_Item_Count, Max_Bag_Weight, Max_Item_Weight)
-VALUES (eid_seq.nextval, 'Joel', 'jbrook12', 1, 2, 6, 6.5);
+VALUES (eid_seq.nextval, 'Joel', 'jbrook12', 1, 2, 130, 50.5);
 
 -- Load rooms 
 
